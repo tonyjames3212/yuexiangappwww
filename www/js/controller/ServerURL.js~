@@ -2,7 +2,8 @@
  * Created by hanzhendong .
  */
 $F.regist("ServerURL", function () {
-    var host = 'http://172.16.248.147:8080/yuexiang';
+    var host = 'http://localhost:8080/yuexiang';
+    var host1 = 'http://172.16.248.147:3000/yuexiangapp';
 
     this.SERVER_URL = {
         host: host,
