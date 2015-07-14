@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--Created by hanzhendong on 2015/2/9.-->
+<html>
+<head lang="en">
+
+</head>
+<body>
+<div id="topic" data-role="page" >
+    <script type="text/javascript">
+        function topic(){
+            var id = getUrlParam("topic", "id");
+            var type = getUrlParam("topic", "type");
+            var url = $f.get("SERVER_URL").newscontentUrl;
+            switch (type) {
+                case 'news':
+                    $('#topic-type').html('新闻内容');
+                    break;
+                case 'recommend':
+                    $('#topic-type').html('推荐内容');
+                    break;
+                case 'latest':
+                    $('#topic-type').html('最新内容');
+                    break;
+                case 'hotness':
+                    $('#topic-type').html('最热内容');
+                    break;
+                case 'culture':
+                    $('#topic-type').html('文化内容');
+                    url = $f.get("SERVER_URL").culturecontentUrl;
+                    break;
+            }
+            $.ajax({
+                url: url,
+                type: "get",
+                dataType: 'json',
+                data: {"id": id},
+                success: function (data) {
+                    var t = data.title;
+//                    if(!t){
+//                        t = data.Name;
+//                    }
+                    $('#topic-title').html(t);
+                    var source=data.source;
+                    var author=data.author;
+                    if(source!=null&&source!=""){
+                        $("#source").html("来源："+source+"  ");
+                    }
+                    if(author!=null&&author!=""){
+                        $("#author").html("作者："+author+"  ");
+                    }
+
+                    $("#created").html("时间："+data.created);
+                    var content=data.content;
+                    content=content.replace("/yuexiang/upload","http://172.16.248.55:8080/yuexiang/upload");
+                    content=content.replace("<img ","<img style='width:100%;'");
+                    $('#topic-content').html(content);
+                }
+            })
+        }
+        topic();
+    </script>
+    <div data-role="header" data-theme="header">
+        <div>
+            <div style="float:left;">
+                <a href="" data-rel="back" data-transition="none">
+                    <img src="img/btn_fanhui.png" style="width:50%;"/>
+                </a>
+            </div>
+            <h3 id="topic-type" align="center">
+
+            </h3>
+        </div>
+    </div>
+    <div data-role="content">
+        <div style="text-align: center">
+            <h3 id="topic-title"></h3>
+            <div  style="margin-bottom:20px;">
+                <span id="source"></span><span id="author"></span><span id="created"></span>
+            </div>
+        </div>
+        <div>
+            <div id="descimg"></div>
+
+            <p id="topic-content"></p>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

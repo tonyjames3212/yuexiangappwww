@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>活动详情</title>
+    <!-- reset.css -->
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- 栅格布局 -->
+    <link rel="stylesheet" href="css/grid.css">
+    <!-- 整站样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 图标字体 -->
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/HRFrame/HRFrame.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/controller/comm/globalDomain.js"></script>
+    <script src="js/controller/activity/getActivityContent.js"></script>
+    <script src="js/public/jquery.formatDate.js"></script>
+    <script>
+        var ctpath = 'yuexiang';
+        var urlinfo = window.location.href;//獲取url
+        var id = urlinfo.split("?")[1].split("=")[1];//拆分url得到”=”後面的參數
+        $(function (){
+            $F.call("activity.getActivityContent", id);
+        });
+
+        function reply() {
+            var content = $("#content").val();
+            var userid = localStorage.getItem("userid");
+            if(userid != null && userid != "") {
+                var nickname = localStorage.getItem("username");
+                var receiver = $("#authorid").val();
+                var floor = $("#floor").val();
+                $.ajax({
+                    url: $f.get("SERVER_URL").replypublishUrl,
+                    type: 'post',
+                    data: {
+                        "pid": id,
+                        "content": content,
+                        "userid": userid,
+                        "ctype": 1,
+                        "receiver": receiver,
+                        "floor": floor,
+                        "nickname":nickname
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.reply == 1) {
+                            alert("回复成功");
+                        } else {
+                            alert("评论成功");
+                        }
+                        window.location.href = "activity_details.html?id=" + id;
+                    }
+                })
+            }else{
+                alert("登录后再评论把!!!");
+            }
+        }
+    </script>
+</head>
+<body class="detail">
+<header class="other">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" id="actDesHeader">
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container detailBox" id="actDetails">
+</div>
+<div data-role="content">
+    <div id="ul-workDetail">
+    </div>
+</div>
+<br>
+<br>
+<div class="col-xs-12">
+    <p id="hotreply">热门评论</p>
+    <ul class="message-list" id="hotlist">
+
+    </ul>
+    <p id="reply">评论列表</p>
+    <ul class="message-list" id="messgelist">
+
+    </ul>
+
+    <div style="height: 20px;width: auto">
+        <a href='#' id="acreply-more">
+            <p align='center' style="font-size: 15px">查看更多...</p>
+        </a>
+    </div>
+
+
+    <div class="input-message" name="inputmessage">
+        <label id="messagelabel" style="font-weight: bold;font-size:1em;"></label>
+        <input type="text" placeholder="发表评论" name="content" id="content" height="30px">
+    </div>
+    <br>
+
+    <div class="form-group">
+        <button class="btn btn-success form-control" style="width: 80px;height: 20px;float: right; padding-top: 5px"
+                onclick="reply()" id="onreply">评论
+        </button>
+    </div>
+</div>
+<!--<div data-role="footer" data-position="fixed" data-id="footernav" id="topic-footer">-->
+    <!--<div data-role="navbar">-->
+        <!--<ul>-->
+            <!--<li><a id="article-reply" href="" data-transition="none"><img src="img/btn_pinglun.png"/></a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

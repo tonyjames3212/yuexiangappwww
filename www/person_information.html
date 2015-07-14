@@ -1,0 +1,21 @@
+<!--Created by zhangzhen on 2015/3/6.-->
+<div data-role="page" style="text-align:center">
+    <script>
+        $f.call('person.getMyInfos');
+    </script>
+    <div data-role="header" data-theme="header" data-position="fixed">
+        <a href="#" data-icon="back" data-rel="back"
+           style="background-color: inherit;border:none;color: #ffffff;font-weight: 100">返回</a>
+        <h2 align="center" style="color: #ffffff;font-weight: 100">个人资料</h2>
+        <a href="person_editinfomation.html" data-icon="grid"
+           style="background-color: inherit;border:none;color: #ffffff;font-weight: 100">编辑</a>
+    </div>
+    <div data-role="content" id="bg-content">
+        <img width="30%" src="img/icon_touxiang.png"/>
+
+        <form method="post" action="demoform.asp">
+            <ul data-role="listview" id="ul_info" data-inset="true" style="background-color: white">
+            </ul>
+        </form>
+    </div>
+</div>

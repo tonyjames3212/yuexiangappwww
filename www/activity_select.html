@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--Created by lizhou on 2015/2/2.-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,
+    height=device-height"/>
+    <title>查看主题活动</title>
+    <script src="js/jquery-mobile/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!--<script src="js/jquery-mobile/jquery.mobile-1.4.5.js"></script>-->
+    <script src="js/moreData.js.del"></script>
+    <script>
+        var keyword,limit,page;
+        $(document).ready(function(){
+            $(".img_search").click(function(){
+                $.ajax({
+                    url:"/mapi/activity/get/search",
+                    data:{"limit":10,"page":1,"keyword":},
+                    type:"get",
+                    dataType:"json",
+                    success:function(data){
+                        if(data != null){
+                            $.each(i,function(data){
+                                li = "<li><img src='"+data.path+"'/></li>"+
+                                    "<li><h2>"+data.h+"<h2/></li>"+
+                                    "<li><p>"+data.p+"<p/></li>"
+                            });
+                        }
+                        $("#bg-content").html(li);
+                    },
+                    error:function(xmlDate){
+                        alert(xmlData.status);
+                    }
+                });
+            });
+        })
+    </script>
+    <!--<style>
+        .ui-input-text{
+            position:absolute;
+        }
+    </style>-->
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header" data-theme="header">
+        <h2 align="center">
+            <div><input/></div>
+            <div>
+            <div style="position:absolute;right:0;bottom:30%;"><img src="img/icon_sousuo.png" class="img-search"/></div>
+        </h2>
+    </div>
+    <div data-role="content" id="bg-content">
+        <ul data-role="listview" data-icon="false" data-icon="home-bg_wen" name="listht">
+            <li>
+                <a href="#">
+                    <h3>舞台艺术互动交流</h3>
+                    <p><b>To Peter Griffin</b></p>
+                </a>
+            </li>
+            <li><a href="#">
+                <h2>各地文化风情录</h2>
+                <p><b>To Peter Griffin</b></p>
+            </a>
+            </li>
+            <li><a href="#">
+                <h2>舞台艺术互动交流</h2>
+                <p><b>To Peter Griffin</b></p>
+                <p>Ah, Mr. Griffin, I'm not quite sure how to say this. Kim Bassinger? Bass singer? Bassinger?</p></a>
+            </li>
+            <li><a href="#">
+                <h2>个人收藏互动分享</h2>
+                <p><b>To Peter Griffin</b></p>
+            </a>
+            </li>
+        </ul>
+        <div><a href="#" onclick="callBackData()"><p align="center">查看更多...</p></a></div>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-id="footernav">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home-shouye" data-transition="slide" data-direction="reverse">首页</a>
+                </li>
+                <li><a href="#anylink" data-icon="home-huodong" class="ui-btn-active ui-state-persist">主题活动</a></li>
+                <li><a href="share.html" data-role="button" data-icon="home-fenxiang" data-transition="slide">互动分享</a>
+                </li>
+                <li><a href="person.html" data-role="button" data-icon="home-geren">个人中心</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+@charset "utf-8";
+@import "_variable.scss";
+
+.userPanel {
+	margin-top: -1rem;
+	@include bgColor;
+	border-bottom: 0.1rem solid darken(#ececec, 8%);
+
+	a {
+		padding: 2rem 0;
+		display: block;
+		color: #aaa;
+
+		&:before {
+			display: table;
+			content: '';
+		}
+
+		&:after {
+			@extend :before;
+			clear: both;
+		}
+	}
+
+	.icon-usercenter {
+		margin-right: 1rem;
+		font-size: 5rem;
+		vertical-align: -0.7rem;
+	}
+
+	.icon-rightarrow {
+		font-size: 2.5rem;
+		vertical-align: -2.5rem;
+	}
+}
+
+.myActivity {
+	margin-top: 2rem;
+	padding-left: 1.5rem;
+	border-top: 0.1rem solid #ccc;
+	border-bottom: 0.1rem solid #ccc;
+	@include bgColor;
+
+	a {
+		display: block;
+		padding: 1.5rem 0;
+		font-size: 1.4rem;
+
+		&:first-child {
+			border-bottom: 0.1rem solid #ccc;
+		}
+
+		.icon-rightarrow {
+			color: #aaa;
+		}
+	}
+}
+
+.myShare {
+	@extend .myActivity;
+}
+
+.setting {
+	@extend .myActivity;
+
+	a {
+		&:first-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.loginPanel {
+	margin-top: 2rem;
+
+	input {
+		&:first-child {
+			border-top: 0.1rem solid #ccc;
+			border-bottom: 0.1rem solid #ccc;
+		}
+
+		&:last-child {
+			border-bottom: 0.1rem solid #ccc;
+		}
+	}
+}
+
+.btn-login {
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+	padding: 0.8rem 0;
+	width: 100%;
+	background: #e09d34;
+	border: 0.1rem solid darken(#e09d34, 5%);
+	font-size: 1.4rem;
+}
+
+.form-control {
+	padding: 1.3rem 0 1.3rem .5rem;
+	width: 100%;
+	border: 0;
+	outline: none;
+	@include border-radius(0);
+	@include box-shadow(none);
+	font-size: 1.4rem;
+}
+
+.regPanel {
+	input {
+		border: 0.1rem solid #ccc;
+		margin: 1rem 0;
+	}
+
+	.btn-reg {
+		@extend .btn-login;
+	}
+
+	.user-login-link {
+		margin-top: 2rem;
+		border-top: 0.1rem solid #ccc;
+		border-bottom: 0.1rem solid #ccc;
+
+		a {
+			display: block;
+			padding: 2rem 0;
+			text-align: center;
+		}
+	}
+}
+
+.settingPanel {
+	@extend .setting;
+	text-align: center;
+}

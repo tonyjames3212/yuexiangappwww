@@ -1,0 +1,512 @@
+@charset "UTF-8";
+/* line 4, ../sass/_common.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 8, ../sass/_common.scss */
+body {
+  padding-top: 5rem;
+  padding-bottom: 5.2rem;
+  font-family: "Microsoft Yahei";
+}
+
+/* line 14, ../sass/_common.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 18, ../sass/_common.scss */
+body.home {
+  background: #ececec;
+}
+
+/* line 22, ../sass/_common.scss */
+body.other {
+  background: #fff;
+}
+
+/* line 26, ../sass/_common.scss */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 4rem;
+  width: 100%;
+  z-index: 3;
+}
+/* line 34, ../sass/_common.scss */
+header .logo {
+  width: 100%;
+  height: 4rem;
+  background: url(../images/logo.jpg) center center no-repeat;
+}
+
+/* line 42, ../sass/_common.scss */
+header.other {
+  padding-top: 1.1rem;
+}
+
+/* line 46, ../sass/_common.scss */
+header.home {
+  background: #800400;
+}
+
+/* line 50, ../sass/_common.scss */
+header.other {
+  background: #fff;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+/* line 55, ../sass/_common.scss */
+.head-title {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+/* line 61, ../sass/_common.scss */
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 0.1rem solid #bababa;
+  background: #fff;
+  z-index: 10;
+}
+/* line 70, ../sass/_common.scss */
+nav div[class^="col"] {
+  text-align: center;
+  line-height: 1.4rem;
+  padding: 1rem 0 .5rem 0;
+}
+/* line 76, ../sass/_common.scss */
+nav div[class^="col"].current a {
+  color: #800400;
+}
+/* line 81, ../sass/_common.scss */
+nav div[class^="col"].operating {
+  margin-top: .5rem;
+}
+/* line 85, ../sass/_common.scss */
+nav div[class^="col"] a {
+  display: block;
+  font-size: 1.2rem;
+}
+/* line 91, ../sass/_common.scss */
+nav .icon {
+  font-size: 2.5rem;
+}
+/* line 94, ../sass/_common.scss */
+nav .icon.icon-add {
+  display: inline-block;
+  font-size: 3.5rem;
+  color: #800400;
+  transition: all .5s;
+}
+
+/* line 107, ../sass/_common.scss */
+#addWrapper {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 5;
+  transition: all 0.5s;
+}
+/* line 118, ../sass/_common.scss */
+#addWrapper .menu {
+  position: absolute;
+  left: 50%;
+  bottom: 8rem;
+  width: 15rem;
+  margin-left: -6.3rem;
+}
+/* line 125, ../sass/_common.scss */
+#addWrapper .menu li {
+  float: left;
+  margin: 0 1rem;
+}
+/* line 129, ../sass/_common.scss */
+#addWrapper .menu li p {
+  text-align: center;
+  margin-top: .5rem;
+}
+
+/* line 137, ../sass/_common.scss */
+a {
+  color: #000;
+}
+/* line 140, ../sass/_common.scss */
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/* line 146, ../sass/_common.scss */
+.back-btn {
+  position: absolute;
+  display: block;
+  margin-top: .5rem;
+  width: 5rem;
+  color: #800400;
+}
+/* line 153, ../sass/_common.scss */
+.back-btn:hover {
+  color: #800400;
+}
+
+/* line 158, ../sass/_common.scss */
+.status {
+  margin: 1rem 0;
+  color: #7b7b7b;
+}
+
+/* line 164, ../sass/_common.scss */
+.nums > span {
+  margin: 0 .5rem;
+}
+/* line 167, ../sass/_common.scss */
+.nums > span a {
+  color: #8e8e8e;
+}
+
+/* line 173, ../sass/_common.scss */
+.btn {
+  padding: 5px 6px;
+  color: #fff;
+  border: 1px solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 180, ../sass/_common.scss */
+.btn.btn-primary {
+  background: #800400;
+  border-color: #710400;
+}
+
+/* 首页样式 */
+/* 列表模块 */
+/* line 5, ../sass/_index.scss */
+.contentBox {
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  color: #8d8d8d;
+  border-bottom: 1px solid #c9c9c9;
+  background: #fff;
+}
+/* line 12, ../sass/_index.scss */
+.contentBox a {
+  color: #656565;
+}
+/* line 15, ../sass/_index.scss */
+.contentBox a .activeImg {
+  padding-right: 0;
+}
+/* line 19, ../sass/_index.scss */
+.contentBox a h1 {
+  font-size: 1.4rem;
+  color: #000;
+}
+/* line 25, ../sass/_index.scss */
+.contentBox a .content p {
+  margin: .2rem 0;
+  line-height: 1.3rem;
+}
+/* line 32, ../sass/_index.scss */
+.contentBox .info {
+  margin-top: 1rem;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  border-top: 1px solid #e5e3e3;
+  line-height: 2.5rem;
+}
+/* line 41, ../sass/_index.scss */
+.contentBox .info .avatar span {
+  margin: 0 .5rem;
+}
+/* line 46, ../sass/_index.scss */
+.contentBox .info img {
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+}
+
+/* line 5, ../sass/_detail.scss */
+header.other .nums {
+  margin-top: .5rem;
+  margin-left: 3rem;
+}
+
+/* line 12, ../sass/_detail.scss */
+.detailBox h1 {
+  font-size: 1.4rem;
+}
+/* line 17, ../sass/_detail.scss */
+.detailBox .text-group .img {
+  float: left;
+  margin-right: 1rem;
+  width: 30%;
+}
+/* line 22, ../sass/_detail.scss */
+.detailBox .text-group p {
+  margin: 1rem 0;
+  text-indent: 24px;
+  line-height: 1.5rem;
+}
+
+/* line 4, ../sass/_user.scss */
+.userPanel {
+  margin-top: -1rem;
+  background: #fff;
+  border-bottom: 0.1rem solid #d8d8d8;
+}
+/* line 9, ../sass/_user.scss */
+.userPanel a {
+  padding: 2rem 0;
+  display: block;
+  color: #aaa;
+}
+/* line 14, ../sass/_user.scss */
+.userPanel a:before, .userPanel a:after {
+  display: table;
+  content: '';
+}
+/* line 19, ../sass/_user.scss */
+.userPanel a:after {
+  clear: both;
+}
+/* line 25, ../sass/_user.scss */
+.userPanel .icon-usercenter {
+  margin-right: 1rem;
+  font-size: 5rem;
+  vertical-align: -0.7rem;
+}
+/* line 31, ../sass/_user.scss */
+.userPanel .icon-rightarrow {
+  font-size: 2.5rem;
+  vertical-align: -2.5rem;
+}
+
+/* line 37, ../sass/_user.scss */
+.myActivity, .myShare, .setting, .settingPanel {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  border-top: 0.1rem solid #ccc;
+  border-bottom: 0.1rem solid #ccc;
+  background: #fff;
+}
+/* line 44, ../sass/_user.scss */
+.myActivity a, .myShare a, .setting a, .settingPanel a {
+  display: block;
+  padding: 1.5rem 0;
+  font-size: 1.4rem;
+}
+/* line 49, ../sass/_user.scss */
+.myActivity a:first-child, .myShare a:first-child, .setting a:first-child, .settingPanel a:first-child {
+  border-bottom: 0.1rem solid #ccc;
+}
+/* line 53, ../sass/_user.scss */
+.myActivity a .icon-rightarrow, .myShare a .icon-rightarrow, .setting a .icon-rightarrow, .settingPanel a .icon-rightarrow {
+  color: #aaa;
+}
+
+/* line 67, ../sass/_user.scss */
+.setting a:first-child, .settingPanel a:first-child {
+  border-bottom: none;
+}
+
+/* line 73, ../sass/_user.scss */
+.loginPanel {
+  margin-top: 2rem;
+}
+/* line 77, ../sass/_user.scss */
+.loginPanel input:first-child {
+  border-top: 0.1rem solid #ccc;
+  border-bottom: 0.1rem solid #ccc;
+}
+/* line 82, ../sass/_user.scss */
+.loginPanel input:last-child {
+  border-bottom: 0.1rem solid #ccc;
+  margin-top: 0;
+}
+
+/* line 89, ../sass/_user.scss */
+.btn-login, .regPanel .btn-reg {
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  padding: 0.8rem 0;
+  width: 100%;
+  background: #e09d34;
+  border: 0.1rem solid #d99221;
+  font-size: 1.4rem;
+}
+
+/* line 99, ../sass/_user.scss */
+input.form-control {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1) inset;
+}
+
+/* line 104, ../sass/_user.scss */
+.form-control {
+  padding: 1.3rem 0 1.3rem .5rem;
+  width: 100%;
+  border: 0;
+  outline: none;
+  font-size: 1.4rem;
+}
+
+/* line 112, ../sass/_user.scss */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* line 117, ../sass/_user.scss */
+.regPanel input {
+  border: 0.1rem solid #ccc;
+  margin: 1rem 0;
+}
+/* line 126, ../sass/_user.scss */
+.regPanel .user-login-link {
+  margin-top: 2rem;
+  border-top: 0.1rem solid #ccc;
+  border-bottom: 0.1rem solid #ccc;
+}
+/* line 131, ../sass/_user.scss */
+.regPanel .user-login-link a {
+  display: block;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* line 139, ../sass/_user.scss */
+.settingPanel {
+  text-align: center;
+}
+
+/* line 145, ../sass/_user.scss */
+.creativeBox .form-control {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border: 1px solid #ccc;
+}
+/* line 151, ../sass/_user.scss */
+.creativeBox label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* line 159, ../sass/_user.scss */
+.form-control + .form-control {
+  margin-top: 0.5rem;
+}
+
+/* line 163, ../sass/_user.scss */
+.btn.btn-success {
+  background-color: #61c72f;
+  border-color: #55ae29;
+}
+
+/* 上传封面 */
+/* line 169, ../sass/_user.scss */
+.uploadImg {
+  padding: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  color: #aaa;
+  cursor: pointer;
+}
+
+/* line 179, ../sass/_user.scss */
+.uploadImg h5 {
+  font-size: 50px;
+}
+
+/* 留言列表 */
+/* line 184, ../sass/_user.scss */
+.message-list {
+  margin-top: 2rem;
+}
+/* line 188, ../sass/_user.scss */
+.message-list li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #f5f5f5;
+}
+/* line 191, ../sass/_user.scss */
+.message-list li:before, .message-list li:after {
+  display: table;
+  content: '';
+}
+/* line 197, ../sass/_user.scss */
+.message-list li:after {
+  clear: both;
+}
+/* line 206, ../sass/_user.scss */
+.message-list .avatar {
+  margin-right: 0.8rem;
+  float: left;
+  width: 2.5rem;
+}
+/* line 212, ../sass/_user.scss */
+.message-list .content {
+  float: left;
+}
+/* line 215, ../sass/_user.scss */
+.message-list .content .top {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+/* line 219, ../sass/_user.scss */
+.message-list .content .top .date {
+  color: #ccc;
+}
+/* line 225, ../sass/_user.scss */
+.message-list .right-operating {
+  position: absolute;
+  top: 0;
+  right: 0.1rem;
+}
+/* line 230, ../sass/_user.scss */
+.message-list .right-operating a {
+  margin-left: 0.5rem;
+  color: gray;
+}
+
+/* line 237, ../sass/_user.scss */
+.input-message input {
+  width: 100%;
+  padding: 0.4rem 0 0.4rem 0.5rem;
+  border: 0.1rem solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.activity {
+  color: gray;
+  font-size: 1.5rem;
+  height: 13px;
+}
+.title{
+  font-size: 1.5rem;
+  color: #000;
+  height: 13px;
+}

@@ -1,0 +1,220 @@
+/*自定义图片样式*/
+
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+    font-family: helvetica;
+}
+
+/*界面整体背景色*/
+.ui-page {
+    background: #EBEBEB;
+}
+
+/*标头header*/
+.ui-bar-header {
+    /*color: #fffaea;*/
+    background-color: #8e0007;
+    background-size: 100% 100%;
+}
+
+.ui-bar-h {
+    background-image: url("../img/bg_geren.png");
+    background-size: 100% 100%;
+}
+
+.ui-bar-p {
+    background-image: url("../img/icon_touxiang.png");
+    background-size: 100% 100%;
+}
+
+/*页脚footer*/
+.nav-style .ui-btn {
+    padding-top: 20px !important;
+}
+.nav-style .ui-btn:after {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: -15px !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.ui-bar-f,
+.ui-page-theme-f .ui-bar-inherit,
+html .ui-bar-f .ui-bar-inherit,
+html .ui-body-f .ui-bar-inherit,
+html body .ui-group-theme-f .ui-bar-inherit {
+    background: #F89406 /*{f-bar-background-color}*/;
+    border-color: #2A2A2A /*{f-bar-border}*/;
+    color: #ffffff /*{f-bar-color}*/;
+    text-shadow: 0 /*{f-bar-shadow-x}*/ 0 /*{f-bar-shadow-y}*/ 0 /*{f-bar-shadow-radius}*/ #000000 /*{f-bar-shadow-color}*/;
+    font-weight: bold;
+}
+
+#footer li a {
+    text-align: center;
+}
+
+.ui-footer {
+    border-color: #0d0d0d;
+    background: #2d2d2d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #FBFBFB 0%, #FBFBFB 49%, #FBFBFB 50%, #FBFBFB 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FBFBFB), color-stop(49%,#FBFBFB), color-stop(50%,#FBFBFB), color-stop(100%,#FBFBFB)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #FBFBFB 0%,#FBFBFB 49%,#FBFBFB 50%,#FBFBFB 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #FBFBFB 0%,#FBFBFB 49%,#FBFBFB 50%,#FBFBFB 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #FBFBFB 0%,#FBFBFB 49%,#FBFBFB 50%,#FBFBFB 100%); /* IE10+ */
+    background: linear-gradient(top,  #FBFBFB 0%,#FBFBFB 49%,#FBFBFB 50%,#FBFBFB 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+.ui-footer .ui-btn {
+    border: 0 none;
+    background: transparent;
+}
+
+#footer .ui-btn-active {
+    background: none rgba(171,171,171,0.2);
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+}
+
+.ui-footer .ui-btn-inner {
+    border-color: #434343;
+    padding-top: 40px !important;
+}
+
+/*#footer-home .ui-icon {*/
+    /*background:  url(../img/icon_shouye2.png) 50% 50% no-repeat;*/
+    /*background-size: 24px 22px;*/
+/*}*/
+
+/*下面图标*/
+.ui-icon-home-shouye:after {
+    background: url("../img/icon_shouye.png") 50% 50% no-repeat;
+    /*background-size: 24px 16px;*/
+}
+#footer-home.ui-btn-active:after {
+    background: url("../img/icon_shouye2.png") 50% 50% no-repeat;
+}
+
+.ui-icon-home-huodong:after {
+    background: url("../img/icon_huodong.png") 50% 50% no-repeat;
+    /*background-size: 24px 16px;*/
+}
+#footer-activity.ui-btn-active:after {
+    background: url("../img/icon_huodong2.png") 50% 50% no-repeat;
+}
+
+.ui-icon-home-fenxiang:after {
+    background: url("../img/icon_fenxiang.png") 50% 50% no-repeat;
+    /*background-size: 24px 16px;*/
+}
+#footer-share.ui-btn-active:after {
+    background: url("../img/icon_fenxiang2.png") 50% 50% no-repeat;
+}
+
+.ui-icon-home-geren:after {
+    background: url("../img/icon_geren.png") 50% 50% no-repeat;
+    /*background-size: 24px 16px;*/
+}
+#footer-login.ui-btn-active:after {
+    background: url("../img/icon_geren2.png") 50% 50% no-repeat;
+}
+
+.ui-icon-home-geren:after {
+    background: url("../img/icon_geren.png") 50% 50% no-repeat;
+    /*background-size: 24px 16px;*/
+}
+#footer-info.ui-btn-active:after {
+    background: url("../img/icon_geren2.png") 50% 50% no-repeat;
+}
+
+/*activity活动*/
+
+/*主题活动表头背景*/
+#bg-activity {
+    background-color: #C40000;
+}
+
+/*搜素框样式*/
+.img-search {
+    float: right;
+    padding-left: 20px;
+    width: 30px;
+    height: 30px;
+
+}
+
+/*内容区域背景颜色*/
+#bg-content {
+    background-color: #e0d9c4;
+}
+
+.act-img-bg {
+    padding-top: 30px;
+
+}
+
+/*标题头样式*/
+/*#ui > li > a {
+    color: #4B946A;
+}*/
+
+/*主区img调整*/
+.ui-listview li img {
+    /*margin-top: 11px;*/
+    /*margin-left: 10px;*/
+    /*margin-bottom: 10px;*/
+    /*height: 70px;*/
+
+}
+
+.ui-listview li p {
+    font-size: 0.8em;
+    color: #6A655F;
+    white-space: normal;
+}
+
+.ui-listview:not([name*="none"]) li {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.ui-listview:not([name*="none"]) li > a {
+    background-image: url("../img/bg_wen.png");
+    background-size: 100% 100%;
+}
+
+/*个人中心标头背景*/
+.ui-icon-person-bg {
+    background-image: url("../img/bg_geren.png");
+    background-size: 100% 100%;
+}
+
+/*个人中心列表头*/
+.head {
+    font-size: 18px;
+}
+
+.body {
+    font-size: 36px;
+}
+
+/*个人中心的箭头*/
+
+.xiage {
+    float: right;
+}
+
+textarea.ui-input-text {
+    min-height: 8em;
+}

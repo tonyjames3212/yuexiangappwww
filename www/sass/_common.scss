@@ -1,0 +1,182 @@
+@charset "utf-8";
+@import "_variable.scss";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	padding-top: 5rem;
+	padding-bottom: 5.2rem;
+	font-family: "Microsoft Yahei";
+}
+
+html,body {
+	height: 100%;
+}
+
+body.home {
+	@include bgColor(#ececec);
+}
+
+body.other {
+	@include bgColor(#fff);
+}
+
+header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 4rem;
+	width: 100%;
+	z-index: 3;
+
+	.logo {
+		width: 100%;
+		height: 4rem;
+		background: url(../images/logo.jpg) center center no-repeat;
+
+	}
+}
+
+header.other {
+	padding-top: 1.1rem;
+}
+
+header.home {
+	@include bgColor(#800400);
+}
+
+header.other {
+	@include bgColor(#fff);
+	border-bottom: 1px solid #c9c9c9;
+}
+
+.head-title {
+	font-size: $font-size-h1;
+	line-height: 2rem;
+	text-align: center;
+}
+
+nav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	border-top: .1rem solid lighten(#a0a0a0, 10%);
+	@include bgColor(#fff);
+	z-index: 10;
+
+	div[class^="col"] {
+		text-align: center;
+		line-height: 1.4rem;
+		padding: 1rem 0 .5rem 0;
+
+		&.current {
+			a {
+				@include color;
+			}
+		}
+
+		&.operating {
+			margin-top: .5rem;
+		}
+
+		a {
+			display: block;
+			font-size: $content-size;
+		}
+	}
+
+	.icon {
+		font-size: 2.5rem;
+
+		&.icon-add {
+			display: inline-block;
+			font-size: 3.5rem;
+			@include color;
+			transition: all .5s;
+		}
+	}
+}
+
+// #addBtn i.rotate {
+// 	transform: rotate(45deg);
+// }
+
+#addWrapper {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 5;
+	transition: all 0.5s;
+
+	.menu {
+		position: absolute;
+		left: 50%;
+		bottom: 8rem;
+		width: 15rem;
+		margin-left: -6.3rem;
+
+		li {
+			float: left;
+			margin: 0 1rem;
+
+			p {
+				text-align: center;
+				margin-top: .5rem;
+			}
+		}
+	}
+}
+
+a {
+	color: #000;
+
+	&:hover {
+		text-decoration: none;
+		color: #000;
+	}
+}
+
+.back-btn {
+	display: block;
+	margin-top: .5rem;
+	width: 2rem;
+	@include color();
+
+	&:hover {
+		@include color;
+	}
+}
+
+.status {
+	margin: 1rem 0;
+	@include color(#7b7b7b);
+}
+
+.nums {
+	> span {
+		margin: 0 .5rem;
+
+		a {
+			@include color(#8e8e8e);
+		}
+	}
+}
+
+.btn {
+	padding: 5px 6px;
+	color: #fff;
+	border: 1px solid #ccc;
+	@include border-radius(3px);
+}
+
+.btn.btn-primary {
+	@include bgColor(#800400);
+	border-color: darken(#800400, 3%);
+}

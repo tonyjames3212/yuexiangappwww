@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--Created by lizhou on 2015/2/2.-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,
+    height=device-height"/>
+    <title>作品个人评论</title>
+    <script src="js/jquery-mobile/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!--<script src="js/jquery-mobile/jquery.mobile-1.4.5.js"></script>-->
+    <script src="js/moreData.js.del"></script>
+    <script src="js/load.js"></script>
+    <style>
+        textarea.ui-input-text { min-height: 520px;  }
+    </style>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header" data-theme="header">
+        <div>
+            <h2 align="center">评论
+                <div style="float:left;"><a href="share_handle.html">取消</a></div>
+                <div style="float:right;"><a href="share_handle.html">发送</a></div>
+            </h2>
+        </div>
+    </div>
+    <div data-role="content" id="bg-content">
+        <textarea></textarea>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-id="footernav">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home-shouye" data-transition="slide" data-direction="reverse">首页</a>
+                </li>
+                <li><a href="activity.html" data-icon="home-huodong" data-transition="slide" data-direction="reverse">主题活动</a>
+                </li>
+                <li><a href="#anylink" data-role="button" data-icon="home-fenxiang"
+                       class="ui-btn-active">互动分享</a></li>
+                <li><a href="#anylink" data-role="button" data-icon="home-geren">个人中心</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

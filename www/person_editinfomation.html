@@ -1,0 +1,83 @@
+<!--Created by zhangzhen on 2015/3/9.-->
+<div data-role="page" style="text-align:center">
+    <script>
+        $f.call('person.getMyInfoEdit');
+        $(document).ready(function () {
+            $("#sub").click(function () {
+                $f.call('person.updateUserInfo');
+            })
+        });
+    </script>
+    <div data-role="header" data-theme="header" data-position="fixed">
+        <a href="#" data-icon="back" data-rel="back"
+           style="background-color: inherit;border:none;color: #ffffff;font-weight: 100">返回</a>
+
+        <h2 align="center" style="color: #ffffff;font-weight: 100">编辑个人资料</h2>
+    </div>
+    <div data-role="content" id="bg-content">
+        <form method="post" action="demoform.asp">
+            <ul data-role="listview" id="ul_edit" data-inset="true" style="background-color: white">
+                <li style="margin-top:0px;border:none">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>账户：</span></div>
+                        <div class="ui-block-b" id="d-name" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="u-name" id="u-name" readonly="readonly">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>性别：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <select name="gender" id="sex">
+                                <option value="m" selected="selected">男</option>
+                                <option value="f">女</option>
+                            </select>
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>生日：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="date" name="birth" id="birth">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>邮箱：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="email" name="email" id="email" placeholder="您的邮箱地址..">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>住址：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="address" id="address">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>邮编：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="postcode" id="postcode">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>电话：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="mobile" id="mobile">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>QQ：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="QQ" id="QQ">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>MSN：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="MSN" id="MSN">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>微博：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="wei-bo" id="wei-bo">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>省份：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="province" id="province">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>市县：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="city" id="city">
+                        </div>
+                        <div class="ui-block-a" style="width:18%;margin-top:7px"><span>公司：</span></div>
+                        <div class="ui-block-b" style="width:82%;margin-top:-5px">
+                            <input type="text" style="width:99%" name="company" id="company">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <a href="#" data-role="button" id="sub">提交</a>
+    </div>
+</div>

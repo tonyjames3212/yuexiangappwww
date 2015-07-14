@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- reset.css -->
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- 栅格布局 -->
+    <link rel="stylesheet" href="css/grid.css">
+    <!-- 整站样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 图标字体 -->
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <script src="js/jquery-mobile/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/HRFrame/HRFrame.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/controller/comm/globalDomain.js"></script>
+    <script src="js/controller/person/getMyInfo.js"></script>
+    <script>
+        var userid = localStorage.getItem("userid");
+        function login() {
+            window.location.href = "/login.html";
+        }
+        function setting() {//设置
+            window.location.href = "setting.html";
+        }
+
+        $(function () {
+            $f.call('person.getMyInfo');
+        });
+
+        function names(name) {
+            window.location.href = name + ".html";
+        }
+        function activity(num) {
+            if (userid != null && userid != "") {
+                window.location.href = "person_myactive.html?num=" + num;
+            } else {
+                alert("抱歉!请登录");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</head>
+<body class="home" style="margin-bottom: 100px">
+<header class="other">
+    <div class="container">
+        <div class="col-xs-12">
+            <h1 class="head-title">个人中心</h1>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row userPanel" id="login">
+        <div class="col-xs-12">
+            <a onclick="names('login')">
+                <div class="pull-left">
+                    <i class="icon icon-usercenter"></i>未登录
+                </div>
+                <div class="pull-right">
+                    <i class="icon icon-rightarrow"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row userPanel" style="display: none" id="person">
+        <div class="col-xs-12">
+            <a href="#" onclick="names('login')">
+                <div class="pull-left" style="width:80%;">
+                    <img src="" id="minheadimg" style="border-radius:50%;width: 30%;">
+
+                    <label id="username" style="font-size:x-large;vertical-align:bottom;"></label>
+
+
+                </div>
+                <div class="pull-right" id="icon-rightarrow">
+                    <i class="icon icon-rightarrow"></i>
+                </div>
+            </a>
+
+            <p id="actcounts" style="float: right"></p>
+            <br>
+
+            <p id="shacounts" style="float: right"></p>
+
+            <p id="signincount" style="float: right;"></p>
+
+        </div>
+    </div>
+    <div class="row myActivity">
+        <div class="col-xs-12">
+            <a onclick="activity(1);">我发布的活动<span class="pull-right"><i
+                    class="icon icon-rightarrow"></i></span></a>
+            <a onclick="activity(2)">我参与的活动<span class="pull-right"><i class="icon icon-rightarrow"></i></span></a>
+        </div>
+    </div>
+
+    <div class="row setting">
+        <div class="col-xs-12">
+            <a href="#" onclick="adds('person_myshare')">我发布的分享<span class="pull-right"><i
+                    class="icon icon-rightarrow"></i></span></a>
+        </div>
+    </div>
+
+
+    <div class="row setting">
+        <div class="col-xs-12">
+            <a id="" href="#" onclick="adds('person_message_activity');">我的消息<span class="pull-right"><i
+                    class="icon icon-rightarrow"></i></span></a>
+        </div>
+    </div>
+
+    <div class="row setting">
+        <div class="col-xs-12">
+            <a id="setting" href="#" onclick="names('setting');">设置<span class="pull-right"><i
+                    class="icon icon-rightarrow"></i></span></a>
+        </div>
+    </div>
+</div>
+<nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2">
+                <a href="#" onclick="names('index')">
+                    <i class="icon icon-activity"></i>
+
+                    <p>活动</p>
+                </a>
+            </div>
+            <div class="col-xs-2">
+                <a href="#" onclick="names('share')">
+                    <i class="icon icon-share"></i>
+
+                    <p>分享</p>
+                </a>
+            </div>
+            <div class="col-xs-4 operating">
+                <a id="addBtn" href="#">
+                    <div class="add">
+                        <i class="icon icon-add"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-2">
+                <a href="#" onclick="names('news')">
+                    <i class="icon icon-news"></i>
+
+                    <p>资讯</p>
+                </a>
+            </div>
+            <div class="col-xs-2  current">
+                <a href="#" onclick="names('my')">
+                    <i class="icon icon-my"></i>
+
+                    <p>我的</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="addWrapper">
+        <ul class="menu">
+            <li><a href="#" onclick="adds('addActive')"><img src="images/active.png" alt="">
+
+                <p>活动</p></a></li>
+            <li><a href="#" onclick="adds('shareAdd')"><img src="images/share.png" alt="">
+
+                <p>分享</p></a></li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

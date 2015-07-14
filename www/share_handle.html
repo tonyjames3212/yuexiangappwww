@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--Created by lizhou on 2015/2/2.-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,
+    height=device-height"/>
+    <title>互动分享操作</title>
+    <script src="js/jquery-mobile/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!--<script src="js/jquery-mobile/jquery.mobile-1.4.5.js"></script>-->
+    <script src="js/moreData.js.del"></script>
+    <script src="js/load.js"></script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header" data-theme="header">
+        <div>
+            <h2 align="center">互动分享之作品
+                <div style="float:left;"><a href="activity.html">
+                    <img src="img/btn_fanhui.png" style="width:50%;"/></a></div>
+                <img src="img/icon_xinjian.png" class="img-search"/>
+                <img src="img/icon_sousuo.png" class="img-search"/>
+            </h2>
+        </div>
+    </div>
+    <div data-role="content" id="bg-content">
+        <ul data-role="listview" id="activity" data-icon="false" data-icon="home-bg_wen" name="list">
+            <li>
+                <a href="#">
+                    <img src="img/tu1.png"/>
+
+                    <h3>分享各地风俗</h3>
+
+                    <p><b>To Peter Griffin</b></p>
+                    <div id="c" style="float:right;"><table>
+                        <td><div><a href="share_comment.html"><img id="comment" class="handle" src="img/btn_pinglun.png"/></a></div></td>
+                        <td><div><img id="praise" class="handle" src="img/btn_zan.png"/></div></td>
+                        <td><div><img id="stamp" class="handle" src="img/btn_cai.png"/></div></td>
+                    </table></div>
+                </a>
+            </li>
+            <li><a href="#">
+                <img src="img/tu2.png"/>
+
+                <h2>分享各地文化风情录</h2>
+
+                <p><b>To Peter Griffin</b></p>
+                <div style="float:right;"><table>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_pinglun.png"/></div></td>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_zan.png"/></div></td>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_cai.png"/></div></td>
+                </table></div>
+            </a>
+            </li>
+            <li><a href="#">
+                <img src="img/tu3.png"/>
+
+                <h2>分享美食城</h2>
+
+                <p><b>To Peter Griffin</b></p>
+
+                <p>Ah, Mr. Griffin, I'm not quite sure how to say this. Kim Bassinger? Bass singer? Bassinger?</p>
+                <div style="float:right;"><table>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_pinglun.png"/></div></td>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_zan.png"/></div></td>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_cai.png"/></div></td>
+                </table></div>
+            </a>
+            </li>
+            <li><a href="#">
+                <img src="img/tu4.png"/>
+
+                <h2>分享各地风景</h2>
+
+                <p><b>To Peter Griffin</b></p>
+                <div style="float:right;"><table>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_pinglun.png"/></div></td>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_zan.png"/></div></td>
+                    <td><div><img style="width:50%;height:50%;" src="img/btn_cai.png"/></div></td>
+                </table></div>
+            </a>
+            </li>
+
+        </ul>
+        <div><a href="#" onclick="callBackData()"><p align="center">查看更多...</p></a></div>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-id="footernav">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home-shouye" data-transition="slide" data-direction="reverse">首页</a>
+                </li>
+                <li><a href="#anylink" data-icon="home-huodong" class="ui-btn-active ui-state-persist">主题活动</a></li>
+                <li><a href="share.html" data-role="button" data-icon="home-fenxiang" data-transition="slide">互动分享</a>
+                </li>
+                <li><a href="#anylink" data-role="button" data-icon="home-geren">个人中心</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!--Created by zhangzhen on 2015/3/13.-->
+<div data-role="page">
+    <script>
+        $f.call('person.getMyFile');
+    </script>
+    <div data-role="header" data-theme="header" data-position="fixed">
+        <a href="#" data-icon="back" data-rel="back"
+           style="background-color: inherit;border:none;color: #ffffff;font-weight: 100">返回</a>
+        <h2 align="center" style="color: #ffffff;font-weight: 100">我的文档</h2>
+    </div>
+    <div data-role="content" id="file-content">
+        <ul data-role="listview" data-icon="false" id="file-list">
+        </ul>
+        <div><a href="#" id="file-more"><p align="center">查看更多...</p></a></div>
+    </div>
+</div>

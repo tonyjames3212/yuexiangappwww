@@ -1,0 +1,103 @@
+<!--Created by zhangyihua on 2015/2/27.-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <title>首页</title>
+    <!-- reset.css -->
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- 栅格布局 -->
+    <link rel="stylesheet" href="css/grid.css">
+    <!-- 整站样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 图标字体 -->
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <script src="js/jquery-mobile/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/HRFrame/HRFrame.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/controller/comm/globalDomain.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DO0PnaDo4SLzjVhok7MQNxSw"></script>
+    <script type="text/javascript" src="js/controller/activity/getActivity.js" charset="utf-8"></script>
+    <style type="text/css">
+        #l-map{height:500px;width:100%;}
+        #r-result{width:100%;}
+        ul { list-style-type: none;}
+        li { display: inline-block;}
+        li { margin: 0 2px;}
+        input.labelauty + label { font: 12px "Microsoft Yahei";}
+
+    </style>
+    <script type="text/javascript">
+        $(function (){
+            var urlinfo = window.location.href;//獲取url
+            var siteMap = urlinfo.split("?")[1].split("=")[1];//拆分url得到”=”後面的參數
+            // 百度地图API功能
+
+            function G(id) {
+                return document.getElementById(id);
+            }
+
+            var map = new BMap.Map("l-map");
+            map.centerAndZoom("济南",14);                   // 初始化地图,设置城市和地图级别。
+            map.enableScrollWheelZoom(true);
+
+
+            var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+                    {"input" : "suggestId"
+                        ,"location" : map
+                    });
+
+            setPlace();
+            function setPlace(){
+                map.clearOverlays();    //清除地图上所有覆盖物
+                function myFun(){
+                    var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+                    map.centerAndZoom(pp, 18);
+                    map.addOverlay(new BMap.Marker(pp));    //添加标注
+                }
+                var local = new BMap.LocalSearch(map, { //智能搜索
+                    onSearchComplete: myFun
+                });
+                local.search(decodeURI(siteMap));
+            }
+        });
+    </script>
+</head>
+<body class="home">
+<header class='other'>
+     <div class='container'>
+        <div class='row'>
+             <div class='col-xs-12'>
+                 <a href='javascript:history.go(-1);' class='back-btn pull-left' ><i class='icon icon-back'></i></a>
+                    <p style=" font-size: 1.4rem; line-height: 2rem;text-align: center;">地图信息</p>
+             </div>
+        </div>
+         </div>
+     </header>
+
+<div class='container detailBox'>
+    <div class='row'>
+        <div class='col-lg-12'>
+            <ul data-role="listview" id="ul-article" data-icon="false">
+                <div>
+
+                    <div id="r-result">
+                        <input type="hidden" id="suggestId" size="30" maxlength="50" name="site"/>
+                    </div>
+                    <div id="l-map" ></div>
+                    <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- 栅格布局 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- 整站样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 图标字体 -->
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+
+    <script src="js/jquery-mobile/jquery.min.js"></script>
+    <script src="js/HRFrame/HRFrame.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/controller/comm/globalDomain.js"></script>
+    <script src="js/controller/share/getArticle.js"></script>
+    <script src="js/public/jquery.formatDate.js"></script>
+    <script>
+        var urlinfo = window.location.href;
+        var id = urlinfo.split("?")[1].split("=")[1];
+        $(function () {
+            $F.call("share.getArticle", id);
+        });
+        function reply() {
+            var content = $("#content").val();
+            var userid = localStorage.getItem("userid");
+            var nickname = localStorage.getItem("username");
+            var receiver = $("#authorid").val();
+            var floor = $("#floor").val();
+            $.ajax({
+                url: $f.get("SERVER_URL").replypublishUrl,
+                type: 'post',
+                data: {
+                    "pid": id,
+                    "content": content,
+                    "userid": userid,
+                    "ctype": 0,
+                    "receiver": receiver,
+                    "floor": floor
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.reply == 1) {
+                        alert("回复成功");
+                        window.location.href = "share_detail.html?actId=" + id;
+                    } else {
+                        alert("评论成功");
+                        window.location.href = "share_detail.html?actId=" + id;
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body class="detail">
+<div id="div-article">
+
+</div>
+
+<div class="col-xs-12">
+    <p id="hotreply">热门评论</p>
+    <ul class="message-list" id="hotlist">
+
+    </ul>
+    <p id="reply">评论列表</p>
+    <ul class="message-list" id="messgelist">
+
+    </ul>
+
+    <div style="height: 20px;width: auto">
+        <a href='#' id='reply-more'>
+            <p align='center' style="font-size: 15px">查看更多...</p>
+        </a>
+    </div>
+
+
+    <div class="input-message" id="dingwei">
+        <label id="messagelabel" style="font-weight: bold;font-size:1em;"></label>
+        <input type="text" placeholder="发表评论" name="content" id="content" height="30px">
+    </div>
+    <br>
+
+    <div class="form-group">
+        <button class="btn btn-success form-control" style="width: 80px;height: 20px;float: right; padding-top: 5px"
+                onclick="reply()" id="onreply">评论
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

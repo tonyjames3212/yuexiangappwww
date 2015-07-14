@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "_variable.scss";
+
+header.other {
+	.nums {
+		margin-top: .5rem;
+		margin-left: 3rem;
+	}
+}
+
+.detailBox {
+	h1 {
+		font-size: $font-size-h1;
+	}
+
+	.text-group {
+		.img {
+			float: left;
+			margin-right: 1rem;
+			width: 30%;
+		}
+		p {
+			margin: 1rem 0;
+			text-indent: 24px;
+			line-height: 1.5rem;
+		}
+	}
+}

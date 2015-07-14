@@ -1,0 +1,16 @@
+<!--Created by zhangzhen on 2015/3/13.-->
+<div data-role="page">
+    <script>
+        var id = getUrlParam('photo-detail', 'id');
+        $f.call('person.getMyPictureDetail', id);
+    </script>
+    <div data-role="header" data-theme="header">
+        <a href="#" data-icon="back" data-rel="back"
+           style="background-color: inherit;border:none;color: #ffffff;font-weight: 100">返回</a>
+        <h2 align="center" style="color: #ffffff;font-weight: 100">照片详情</h2>
+    </div>
+    <div data-role="content">
+        <div id="photo-detail" style="text-align:center;">
+        </div>
+    </div>
+</div>

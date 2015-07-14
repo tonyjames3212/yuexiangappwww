@@ -1,0 +1,47 @@
+<!--Created by zhangzhen on 2015/3/19.-->
+<meta charset="UTF-8">
+<style type="text/css">
+    .img_share {
+        max-height: 60px;
+        max-width: 60px;
+    }
+</style>
+<link rel="stylesheet" href="css/comm.css"/>
+<link rel="stylesheet" href="css/pm.css"/>
+<div id="message-details" data-role="page">
+    <script>
+        var ID = getUrlParam('message-details', 'id');
+        var title = getUrlParam('message-details', 'title');
+        $('#title').html(title);
+        $f.call('person.getMessageList', ID);
+    </script>
+    <div data-role="header" data-theme="header" data-position="fixed">
+        <a href="#" data-icon="back" data-rel="back"
+           style="background-color: inherit;border:none;color: #ffffff;font-weight: 100;box-shadow: none;padding-top:12px">返回</a>
+
+        <h2 id="title" align="center" style="color: #ffffff;font-weight: 100">消息人</h2>
+    </div>
+    <div data-role="content" id="MList-content" style="background-color: #ffffff">
+        <article id="chat" class="chat-list-msg wrapper-msg write-msg">
+            <div id="chat-sendmsg-box" style="border-radius: 5px;">
+                <div style="border:none;border-radius: 4px;-webkit-border-radius: 4px;">
+                    <textarea placeholder="输入私信内容" class="txt" style="max-height:40px"></textarea>
+                </div>
+                <section class="action-publisher">
+                    <div style="position:relative;float:right;width:36%;">
+                        <button class="action-write-msg btn-orange-disable L-item-tab" href="javascript:;" title="">发送
+                        </button>
+                        <span class="J-limit" title=""></span>
+                    </div>
+                </section>
+            </div>
+            <div id="chat_widget" class="">
+                <div class="widget-list">
+                    <ul data-role="listview" id="mess-list" class="talk-msg">
+
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

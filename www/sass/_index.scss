@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import "_variable.scss";
+/* 首页样式 */
+/* 列表模块 */
+.contentBox {
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+	color: #8d8d8d;
+	border-bottom: 1px solid #c9c9c9;
+	@include bgColor;
+
+	a {
+		@include color(#656565);
+
+		.activeImg {
+			padding-right: 0;
+		}
+
+		h1 {
+			font-size: $font-size-h1;
+			color: #000;
+		}
+
+		.content {
+			p {
+				margin: .2rem 0;
+				line-height: 1.3rem;
+			}
+		}
+	}
+
+	.info {
+		margin-top: 1rem;
+		padding-top: .3rem;
+		padding-bottom: .3rem;
+		border-top: 1px solid #e5e3e3;
+		line-height: 2.5rem;
+
+		.avatar {
+
+			span {
+				margin: 0 .5rem;
+			}
+		}
+
+		img {
+			@include border-radius(30px);
+		}
+	}
+
+}

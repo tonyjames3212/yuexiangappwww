@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+   	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- reset.css -->
+	<link rel="stylesheet" href="css/basic.css">
+	<!-- 栅格布局 -->
+	<link rel="stylesheet" href="css/grid.css">
+	<!-- 整站样式 -->
+	<link rel="stylesheet" href="css/base.css">
+	<!-- 图标字体 -->
+	<link rel="stylesheet" href="css/fonts/iconfont.css">
+	<script src="js/jquery-mobile/jquery.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/HRFrame/HRFrame.js"></script>
+	<script src="js/load.js"></script>
+	<script src="js/controller/comm/globalDomain.js"></script>
+	<script src="js/controller/news/getNewsList.js"></script>
+	<script>
+		$(function(){
+			$f.call("news.getNewsList");
+		});
+		function names(name) {
+			window.location.href = name + ".html";
+		}
+	</script>
+</head>
+<body class="home">
+	<header class="other">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="head-title">资讯</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container" >
+		<ul data-role="listview" id="news-list" data-icon="false">
+		</ul>
+	</div>
+
+	<div style="height: 20px;width: auto"><a href='#' id='news-more'><p align='center' style="font-size: 15px">查看更多...</p>
+	</a></div>
+	<hr>
+
+	<nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<a href="#" onclick="names('index')">
+						<i class="icon icon-activity"></i>
+						<p>活动</p>
+					</a>
+				</div>
+				<div class="col-xs-2">
+					<a href="#" onclick="names('share')">
+						<i class="icon icon-share"></i>
+						<p>分享</p>
+					</a>
+				</div>
+				<div class="col-xs-4 operating">
+					<a id="addBtn"href="#">
+						<div class="add">
+							<i class="icon icon-add"></i>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-2 current">
+					<a href="#" onclick="names('news')">
+						<i class="icon icon-news"></i>
+						<p>资讯</p>
+					</a>
+				</div>
+				<div class="col-xs-2">
+					<a href="#" onclick="names('my')">
+						<i class="icon icon-my"></i>
+						<p>我的</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div id="addWrapper">
+		<ul class="menu">
+			<li><a href="#" onclick="adds('addActive')"><img src="images/active.png" alt=""><p>活动</p></a></li>
+			<li><a href="#" onclick="adds('shareAdd')"><img src="images/share.png" alt=""><p>分享</p></a></li>
+		</ul>
+	</div>
+</body>
+</html>

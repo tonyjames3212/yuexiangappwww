@@ -1,0 +1,12 @@
+@import "compass/css3";
+
+@mixin bgColor($color:#fff) {
+	background: $color;
+}
+
+@mixin color($color:#800400) {
+	color: $color;
+}
+
+$font-size-h1: 1.4rem;
+$content-size: 1.2rem;
